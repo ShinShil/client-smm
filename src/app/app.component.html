@@ -2,23 +2,23 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
     crossorigin="anonymous">
   <div class="logo">
-    <a th:href="@{/}">
+    <a routerLink="/smm">
       <div class="logo-header">SMM</div>
       <div class="logo-subheader">Polina Dubovik</div>
     </a>
   </div>
   <div class="spacer"></div>
   <div class="auth">
-    <a th:href="@{/author}" class="auth-nav">Author</a>
-    <a th:href="@{/blog}" class="auth-nav">blog</a>
-    <a class="auth-nav auth-account" th:href="@{/account}">account</a>
+    <a routerLink="/author" class="auth-nav">Author</a>
+    <a routerLink="/blog" class="auth-nav">blog</a>
+    <a routerLink="/account" class="auth-nav auth-account">account</a>
   </div>
-  <div class="logged-user-block">
+  <div class="logged-user-block" *ngIf="false">
     <div class="logged-user-wrapper">
       <i class="fa fa-user"></i>
       <a class="logged-user"></a>
     </div>
-    <a class="logout-button" th:href="@{/logout}">Logout</a>
+    <a class="logout-button">Logout</a>
   </div>
 </div>
 <router-outlet></router-outlet>

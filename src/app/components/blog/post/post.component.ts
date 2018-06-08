@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { FetchPost } from '../store/blog.actions';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-post',
@@ -6,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
+  public blogState: Observable<IPostsState>
 
-  constructor() { }
+  constructor(
+    private store: Store<IPostsState>,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.blogState = this.store.select('blog');
   }
 
 }

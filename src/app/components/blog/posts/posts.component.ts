@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-posts',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
+  public blogState: Observable<IPostsState>;
 
-  constructor() { }
+  constructor(private store: Store<IPostsState>) { }
 
   ngOnInit() {
+    this.blogState = this.store.select('blog');
   }
-
 }

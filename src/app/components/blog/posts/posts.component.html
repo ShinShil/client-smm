@@ -1,3 +1,16 @@
-<p>
-  posts works!
-</p>
+<h1 *ngIf="!blogState || (blogState | async).posts.length === 0; else blogs">No Blogs</h1>
+<ng-template #blogs>
+  <div class="blogs">
+    <div *ngFor="let post of (blogState | async).posts" class="blogs-item">
+      <div class="blogs-item-title">
+        {{post.title}}
+      </div>
+      <div class="blogs-item-description">
+        {{post.text}}
+      </div>
+      <div class="blogs-item-footer">
+        <a [routerLink]="['/blog', post.id]">Read more</a>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -9,6 +9,7 @@ import { PostsComponent } from "./posts/posts.component";
 import { PostComponent } from "./post/post.component";
 import { PostEditComponent } from "./post-edit/post-edit.component";
 import { CommonModule } from "@angular/common";
+import { BlogReducerMap } from "./blog.reducer.map";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,7 @@ import { CommonModule } from "@angular/common";
     imports: [
         CommonModule,
         RouterModule.forChild(BlogRoutes),
-        StoreModule.forFeature('posts', BlogReducer),
+        StoreModule.forFeature('blog', BlogReducer),
         EffectsModule.forFeature([BlogEffects])
     ]
 })

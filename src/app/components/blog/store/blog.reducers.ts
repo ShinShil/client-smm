@@ -1,12 +1,12 @@
-import { BlogActions, SAVE_POST, SET_POSTS, SET_EDITED_POST } from "./blog.actions";
+import { BlogActions, SAVE_POST, SET_POST, SET_POSTS } from './blog.actions';
 
 
-const initialState: IBlogState = {
+const initialState: IPostsState = {
     posts: [],
     currEditedPost: null
 }
 
-export function BlogReducer(state: IBlogState = initialState, action: BlogActions) {
+export function BlogReducer(state: IPostsState = initialState, action: BlogActions): IPostsState {
     switch (action.type) {
         case SAVE_POST:
             const updatingIndex = state.posts.findIndex(post => post.id === state.currEditedPost.id);
@@ -25,10 +25,10 @@ export function BlogReducer(state: IBlogState = initialState, action: BlogAction
                 ...state,
                 posts: [...action.payload]
             }
-        case SET_EDITED_POST:
+        case SET_POST:
             return {
                 ...state,
-                currEditedPost: action.payload
+                currEditedPost: {...action.payload}                
             }
         default:
             return state;

@@ -17,12 +17,14 @@ import { PostsComponent } from './components/blog/posts/posts.component';
 import { SmmComponent } from './components/smm/smm.component';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SmmComponent,
-    AuthorComponent
+    AuthorComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

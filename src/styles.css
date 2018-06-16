@@ -1,11 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|PT+Sans|Ultra|Vollkorn');
 
 body {
   margin: 0;
   padding: 0;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Nunito|PT+Sans|Ultra|Vollkorn');
 
 @font-face {
   font-family: "Nunito Light";

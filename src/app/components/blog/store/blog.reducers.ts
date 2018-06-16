@@ -1,4 +1,5 @@
 import { BlogActions, SAVE_POST, SET_POST, SET_POSTS } from './blog.actions';
+import { Urls } from '../../../urls.constant';
 
 
 const initialState: IPostsState = {
@@ -7,6 +8,10 @@ const initialState: IPostsState = {
 }
 
 export function BlogReducer(state: IPostsState = initialState, action: BlogActions): IPostsState {
+    if(action.type === SET_POST) {
+        console.log(Urls.FETCH_POST(1));
+        console.log(action);
+    }
     switch (action.type) {
         case SAVE_POST:
             const updatingIndex = state.posts.findIndex(post => post.id === state.currEditedPost.id);

@@ -1,7 +1,7 @@
 interface IPostModel {
     id: number;
     title: string;
-    text: string;
+    body: string;
 }
 
 interface IAppState {

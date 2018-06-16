@@ -30,4 +30,12 @@ export class FetchPost implements Action {
     constructor(public payload: number) { }
 }
 
-export type BlogActions = SavePost | SetPosts | SetPost; 
+export class FetchPosts implements Action {
+    readonly type = FETCH_POSTS;
+}
+
+export type BlogActions = SavePost 
+    | SetPosts 
+    | SetPost 
+    | FetchPost 
+    | FetchPosts; 

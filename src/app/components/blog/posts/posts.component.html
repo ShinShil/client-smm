@@ -1,16 +1,47 @@
-<h1 *ngIf="!blogState || (blogState | async).posts.length === 0; else blogs">No Blogs</h1>
-<ng-template #blogs>
-  <div class="blogs">
-    <div *ngFor="let post of (blogState | async).posts" class="blogs-item">
-      <div class="blogs-item-title">
-        {{post.title}}
-      </div>
-      <div class="blogs-item-description">
-        {{post.text}}
-      </div>
-      <div class="blogs-item-footer">
-        <a [routerLink]="['/blog', post.id]">Read more</a>
+<div class="host">
+  <h1 *ngIf="!blogState || (blogState | async).posts.length === 0; else blogs">No Blogs</h1>
+  <ng-template #blogs>
+    <div class="container-fluid container-fluid-0">
+      <div class="row">
+        <div class="posts col-9">
+          <div class="container-fluid container-fluid-0">
+            <div class="row">
+              <div *ngFor="let post of (blogState | async).posts; let postIndex = index" class="post-item col-4">
+                <h4 class="post-item-title">
+                  {{post.title}}
+                </h4>
+                <img src="{{'/assets/img/blog_' + (postIndex + 1)  + '.jpg'}}">
+                <div class="post-item-description">
+                  {{post.body}}
+                </div>
+                <div class="post-item-footer">
+                  <a [routerLink]="['/blog', post.id]">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tags col">
+          <div class="tags-wrapper">
+            <h4>Best</h4>
+            <div>
+              <h4>Best 1</h4>
+              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, veritatis tempore corrupti illo quis
+                magnam asperiores ea distinctio rem consequatur.</div>
+            </div>
+            <div>
+              <h4>Best 2</h4>
+              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque sed facilis. Maxime beatae quo ea, quod
+                provident repudiandae sit.</div>
+            </div>
+            <div>
+              <h4>Best 3</h4>
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat blanditiis saepe quae odit dicta explicabo
+                aspernatur molestias voluptatibus ex quis!</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</ng-template>
+  </ng-template>
+</div>

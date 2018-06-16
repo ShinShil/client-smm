@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { AuthComponent } from './components/auth/auth.component';
   ],
   imports: [
     BrowserModule,
+    NgxMasonryModule,
     RouterModule.forRoot(AppRoutes),
     HttpClientModule,
     StoreModule.forRoot(appReducers),

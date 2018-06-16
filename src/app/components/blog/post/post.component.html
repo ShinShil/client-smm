@@ -1,3 +1,11 @@
-
-<h3>{{ (blogState | async).currEditedPost.title }}</h3>
-<p>{{  (blogState | async).currEditedPost.text }} </p>
+<div class="host">
+    <div *ngIf="(blogState | async).currEditedPost == null; else blog">
+        Loading</div>
+    <ng-template #blog>
+        <h2>{{ (blogState | async).currEditedPost.title }}</h2>
+        <h3>Header 1</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate sunt ducimus aut doloremque quas adipisci quam placeat voluptatem. Eligendi sunt ullam dolore molestias quae nobis illum laudantium nihil porro blanditiis. Aperiam beatae delectus, ducimus explicabo dolor commodi? Ipsa, voluptas laudantium?</p>        
+        <h3>Header 2</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate sunt ducimus aut doloremque quas adipisci quam placeat voluptatem. Eligendi sunt ullam dolore molestias quae nobis illum laudantium nihil porro blanditiis. Aperiam beatae delectus, ducimus explicabo dolor commodi? Ipsa, voluptas laudantium?</p>        
+    </ng-template>
+</div>

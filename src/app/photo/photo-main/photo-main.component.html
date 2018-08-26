@@ -1,0 +1,123 @@
+<video autoplay muted loop>
+  <source src="/assets/video/Cut-n-Paste.mp4" type="video/mp4" />
+</video>
+<div class="menu">
+  <div class="photo-main">
+    <div class="content">
+      <div class="name">
+        Studio 64
+      </div>
+      <div class="mini-name">
+        Первое в СНГ gastrosmm агенство
+      </div>
+      <!-- <div class="description">
+      Amazing work for you with love and innsperation
+    </div> -->
+      <div [ngx-scroll-to]="'form'" class="action action2">
+        Получить консультацию
+      </div>
+    </div>
+  </div>
+</div>
+<div class="photo-tree">
+  <h3 class="header">Услуги</h3>
+  <div class="tree">
+    <div class="left">
+      <ng-container *ngFor="let photo of photos; let i = index">
+        <div *ngIf="i % 2 == 0" class="sub-wrapper">
+          <div class="sub-left"></div>
+          <div class="sub-content">
+            <h4 class="sub-header">{{ photo.name }}</h4>
+            <ul>
+              <li *ngFor="let detail of photo.details">
+                {{ detail }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="right">
+      <ng-container *ngFor="let photo of photos; let i = index">
+        <div *ngIf="i % 2 == 1" class="sub-wrapper">
+          <div class="sub-right"></div>
+          <div class="sub-content">
+            <h4 class="sub-header">{{ photo.name }}</h4>
+            <ul>
+              <li *ngFor="let detail of photo.details">
+                {{ detail }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="tree-padding"></div>
+</div>
+<div class="photo-content">
+  <div class="photo-body">
+    <h3 class="header">ПримерЫ работ</h3>
+    <div class="photos">
+      <div class="photo" *ngFor="let photo of photos">
+        <img [src]="photo.src" alt="missing image" />
+        <div class="name">{{ photo.name }}</div>
+        <div class="layout">
+          <h4>{{ photo.name }}</h4>
+          <ul *ngIf="photo.details">
+            <li *ngFor="let detail of photo.details">{{ detail }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="#photo-clients" class="photo-clients-class">
+    <h3>Наши клиенты</h3>
+    <div class="photo-clients-photo">
+      <div class="photo-client" *ngFor="let client of clientPhotos">
+        <img [src]="client.src" />
+      </div>
+    </div>
+  </div>
+  <div id="form" class="photo-form">
+    <form>
+      <div class="promote">Мы свяжемся с Вами в течение 15 минут</div>
+      <mat-form-field>
+        <input matInput placeholder="Имя">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Номер телефона">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Электронная почта">
+      </mat-form-field>
+      <button mat-button mat-raised-button type="submit">Получить консультацию</button>
+    </form>
+    <!-- <div class="helper">
+       Мы готовим на нашей кухне самый вкусный и аутентичный SMM для представителей ниши HoReCA. Мы повышаем узнаваемость бренда,
+      привлекаем целевую аудиторию и увеличиваем количество продаж. SMM - Ваш шаг в успешное будущее</div> -->
+  </div>
+  <div class="footer">
+    <div class="top">
+      <div class="contacts">
+        <div class="address">
+          г. Минск, ул. Мележа, дом 1, пом. 1426
+        </div>
+        <div class="phone">
+          +37529-166-10-55
+        </div>
+        <div class="mail">
+          marketing@studio64.by
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div>
+        Общество с ограниченной ответсвенностью "Студио 64"
+      </div>
+      <div>
+        УНП: 193030150
+      </div>
+    </div>
+  </div>
+</div>

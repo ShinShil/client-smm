@@ -19,16 +19,29 @@ import { SmmComponent } from './components/smm/smm.component';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './components/auth/auth.component';
+import { PhotoMainComponent } from './photo/photo-main/photo-main.component';
+import { MatInputModule, MatButtonModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthoerEditComponent } from './components/admin/authoer-edit/authoer-edit.component';
+import { FormsModule } from '@angular/forms';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   declarations: [
     AppComponent,
     SmmComponent,
     AuthorComponent,
-    AuthComponent
+    AuthComponent,
+    PhotoMainComponent,
+    AuthoerEditComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ScrollToModule.forRoot(),
+    MatInputModule,
+    MatButtonModule,
     NgxMasonryModule,
     RouterModule.forRoot(AppRoutes),
     HttpClientModule,

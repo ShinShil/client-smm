@@ -16,3 +16,10 @@ interface IPostsState extends IAppState{
     posts: IPostModel[];
     currEditedPost: IPostModel;
 }
+
+interface  IAuthorModel {
+    about: string;
+    workExperience: string;
+    education: string;
+    awards: string;
+}

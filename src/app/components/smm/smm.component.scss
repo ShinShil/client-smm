@@ -9,14 +9,13 @@
   .attenttion-wrapper {
     font-family: 'Glacia Indifferent';
     font-size: 2rem;
-    height: 87vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-
+    height: 100vh;
+    text-indent: 17vh;
+    padding-top: 17vh;
+    .attention-header {
+      font-weight: bold; 
+      font-size: 200%;
+    }
     .main {
       font-family: 'Lato';
       letter-spacing: 0.5rem;
@@ -278,6 +277,13 @@
       border-radius: 8px;
       margin-bottom: 1rem;
     }
+  }
+}
+
+.photo-content {
+  color: white;
+  .photo-main {
+
   }
 }
 
